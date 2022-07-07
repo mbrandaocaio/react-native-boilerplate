@@ -3,11 +3,11 @@ Projeto configurado com react navigation v6 - stack e drawer
 SOMENTE ANDROID ATÉ O MOMENTO
 
 
-Project setup
-yarn install
+<h2>Project setup</h2> 
+<h4>yarn install</h4>
 
-Init Metro
-yarn react-native start
+<h2>Init Metro</h2> 
+<h4>yarn react-native start</h4>
 
-Run android
-yarn react-native run-android
+<h2>Run android - Emulator or devide</h2> 
+<h4>yarn react-native run-android</h4>
