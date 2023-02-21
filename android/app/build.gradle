@@ -1,5 +1,8 @@
 apply plugin: "com.android.application"
 
+apply plugin: 'com.google.gms.google-services'
+
+
 
 import com.android.build.OutputFile
 
@@ -130,6 +133,7 @@ def reactNativeArchitectures() {
 }
 
 android {
+    compileSdkVersion 33
     ndkVersion rootProject.ext.ndkVersion
 
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -141,7 +145,8 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
-
+        targetSdkVersion 33
+        
         if (isNewArchitectureEnabled()) {
             // We configure the NDK build only if you decide to opt-in for the New Architecture.
             externalNativeBuild {
@@ -258,6 +263,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:31.2.2')
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
